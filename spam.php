@@ -2,8 +2,12 @@
 set_time_limit(0);
 $success = 0;
 $error = 0;
-$pre = "0912";
-for ($i = 1000000; $i < 9999999; $i++) {
+$pre = $argv[1] ? $argv[1] : "0912";
+
+$start = $argv[2] ? $argv[2] : 1000000;
+$end = $argv[3] ? $argv[3] : 9999999;
+
+for ($i = $start; $i < $end; $i++) {
 	$mobile = $pre . $i;
 
 	if (!spam($mobile)) {
